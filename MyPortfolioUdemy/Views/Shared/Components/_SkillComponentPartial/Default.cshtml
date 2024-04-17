@@ -1,8 +1,16 @@
-﻿<div class="col-six tab-full right">
+﻿@model List<MyPortfolioUdemy.DAL.Entities.Skill>
+<div class="col-six tab-full right">
     <h3>Bazı programlama dilleri</h3>
 
     <ul class="skill-bars">
-        <li>
+        @foreach(var item in Model)
+        {
+            <li>
+                <div class="progress percent @item.Value"><span>@item.Value%</span></div>
+                <strong>@item.Title</strong>
+            </li>
+        }
+        <!--<li>
             <div class="progress percent90"><span>90%</span></div>
             <strong>HTML5</strong>
         </li>
@@ -25,6 +33,6 @@
         <li>
             <div class="progress percent90"><span>90%</span></div>
             <strong>Angular JS</strong>
-        </li>
+        </li>-->
     </ul>
 </div>
